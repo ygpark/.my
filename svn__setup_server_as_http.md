@@ -13,12 +13,9 @@
 
 # 저장소 생성 및 초기화
 
-	svnadmin create /home/svn/myproject
-
-
-# 저장소 생성
-
 	sudo svnadmin create /home/svn/svntest
+	sudo chown www-data /home/svn/ -R
+	sudo chmod u+w /home/svn/svntest/ -R
 
 
 # 파일 수정
