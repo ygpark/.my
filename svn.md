@@ -17,6 +17,7 @@
 
 # diff
 
+## 사용법
 	----------------------------------------------------------------------------
 	사용법: 1. diff [-c M | -r N[:M]] [TARGET[@REV]...]
 	        2. diff [-r N[:M]] --old=OLD-TGT[@OLDREV] [--new=NEW-TGT[@NEWREV]] \
@@ -24,17 +25,14 @@
 	        3. diff OLD-URL[@OLDREV] NEW-URL[@NEWREV]
 	----------------------------------------------------------------------------
 
-	svn diff -r 1:HEAD
 
-	# 예) 2-2. revision 1과 revision2를 diff
-	svn diff -r 1:2
-
-	# 예) 2-2. revision 1과 revision2를 diff
-	svn diff -r 1 main.c@2
-
-	# 예) 직전 버전과 비교
+## 예제 1
+	svn diff -r 1:2       b.txt
+	svn diff -r 1:HEAD    b.txt
 	svn diff -r PREV:HEAD b.txt
-	svn diff -r PREV:HEAD trunk
+
+## 예제 2. diff tool 사용
+	svn diff -r PREV:HEAD --diff-cmd meld a.txt
 
 # log
 
