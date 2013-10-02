@@ -65,6 +65,7 @@
 
 		#하위 디렉토리에 있는 여러 저장소에 대하여 변경사항 검색
 		scan="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git diff --stat -r\n    echo \\\"Leaving directory: \\$line\\\" \n done \""
+		fullscan="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git diff \n    echo \\\"Leaving directory: \\$line\\\" \n done \""
 
 
 
