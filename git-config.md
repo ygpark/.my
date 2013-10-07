@@ -23,8 +23,12 @@
 		ci = commit 
 		co = checkout
 		st = status
+		visual = !gitk
+		last = log -1 HEAD
+
 		# 커밋 대기목록에서 제외
-		unstage = reset HEAD
+		unstage = reset HEAD --
+
 		# 커밋 되돌리기
 		undo=reset --hard
 
@@ -33,8 +37,10 @@
 
 		# 로그를..응?
 		lc = log ORIG_HEAD.. --stat --no-merges
+		
 		# log를 local 시간으로 출력
 		llog = log --date=local
+
 		# pull 이후에 생긴 commit만 출력한다.
 		#	git pull
 		#	git new
@@ -44,10 +50,18 @@
 
 		# 바뀐 파일 목록 출력
 		changes=diff --name-status -r
+
 		# 바뀐 파일들의 양 출력
 		diffstat=diff --stat -r
 		sortdiff = !sh -c 'git diff "$@" | grep "^[+-]" | sort --key=1.2 | uniq -u -s1'
 
+		# diff의 recursive 버전
+		rdiff="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git diff \n    echo \\\"Leaving directory: \\$line\\\" \n done \""
+		rdiff-stat="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git diff --stat -r\n    echo \\\"Leaving directory: \\$line\\\" \n done \""
+
+		# status의 recursive 버전
+		rstatus="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git status \n    echo \\\"Leaving directory: \\$line\\\" \n done \""
+		rst=!git rstatus
 
 		# 해당 함수의 변경사항만 출력한다.
 		#	funcdiff <old-rev> <new-rev> <path> <function>
@@ -63,11 +77,4 @@
 		#	`git clone git://127.0.0.1/project-name.git` 명령 사용가능
 		serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 
-		#하위 디렉토리에 있는 여러 저장소에 대하여 변경사항 검색
-		scan="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git diff --stat -r\n    echo \\\"Leaving directory: \\$line\\\" \n done \""
-		fullscan="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git diff \n    echo \\\"Leaving directory: \\$line\\\" \n done \""
-
-
-
-
-
+		
