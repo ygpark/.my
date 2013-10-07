@@ -6,6 +6,7 @@
 # 저장소 내려받기
 
 	svn checkout http://localhost/svn/projectName
+	https://192.168.100.254:8088/svn/Ehr
 
 # 파일 수정하기
 	#수정한다....
