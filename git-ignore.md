@@ -1,10 +1,12 @@
-# .gitignore 예제
- 
-	.*
-	!.gitignore
-	*.o
-	*.depends
+## 무시(.gitignore)
 
-## 팁
-하위 디렉토리에 .gitignore를 복사해서 그 디렉토리 전용으로 사용가능.
+하위 디렉토리에 .gitignore를 추가로 둘 수 있다.
+ 
+````.gitignore
+.*
+!.gitignore
+*.o
+*.depends
+````
+
 
