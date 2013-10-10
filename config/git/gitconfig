@@ -55,6 +55,9 @@
 	# status의 recursive 버전
 	rstatus="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git status \n    echo \\\"Leaving directory: \\$line\\\" \n done \""
 	rst=!git rstatus
+    
+	# fetch의 recursive 버전
+	rfetch="!bash -c \"  find . -name .git | sed -n 's/\\.git//gp' > /tmp/.tmp1 &&\n        cat /tmp/.tmp1 | while read line \n      do echo \\\"Entering directory: \\$line\\\" \n       git --work-tree=\\$line --git-dir=\\$line/.git fetch \n    echo \\\"Leaving directory: \\$line\\\" \n done \""
 
 	# 해당 함수의 변경사항만 출력한다.
 	#	funcdiff <old-rev> <new-rev> <path> <function>
