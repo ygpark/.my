@@ -26,6 +26,7 @@
 
 [alias]
 	helpme="!cat ~/.githelpme | less"
+	handbook="!cat ~/.githandbook | less"
 
 	br = branch -vv
 	bm = blame --date=relative 

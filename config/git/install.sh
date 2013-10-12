@@ -5,6 +5,7 @@ FIRST_TIME="0"
 
 ln -svf $PWD/_gitconfig ~/.gitconfig
 ln -svf $PWD/_githelpme ~/.githelpme
+ln -svf $PWD/_githandbook ~/.githandbook
 ln -svf $PWD/_gitrc ~/.gitrc
 
 # .bashrc에 추가하기
