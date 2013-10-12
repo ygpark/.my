@@ -1,7 +1,27 @@
 # Bash-for
 
+# 예제1
 
-# 예제
+	for i in $(ls)
+	do
+		echo $i
+	done
+
+# 예제2
+
+	for i in hello world "hello world"
+	do
+		echo $i
+	done
+
+	#
+	# OUTPUT:
+	# 
+	# hello
+	# world
+	# hello world
+
+# 예제3
 
 	MYSQL_PWD=""
 	MYSQL_PWD_CONFIRM=""
