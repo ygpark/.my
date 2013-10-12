@@ -6,7 +6,7 @@ git helpme: 자주 쓰는 명령어 도움말
 	git checkout <tag>                        : 로컬 저장소를 <tag>로 전환
 	git checkout <commit>                     : 로컬 저장소를 <commit>로 전환
 	git checkout <paths>...                   : <paths>를 저장소의 내용으로 복구
-	git checkout -b <branch>                  : 새 브랜치 생성 후 그 브랜치로 전환
+	git checkout -b <branch>                  : 브랜치 생성 & 전환
 
 	git add <paths>                           : 스테이징 영역에 등록
 	git rm  <paths>                           : 삭제와 동시에 스테이징 영역에 등록
