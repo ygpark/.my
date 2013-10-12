@@ -1,3 +1,3 @@
 #!/bin/bash
-ln -svf $PWD/gitconfig ~/.gitconfig
-ln -svf $PWD/githelpme ~/.githelpme
+ln -svf $PWD/_gitconfig ~/.gitconfig
+ln -svf $PWD/_githelpme ~/.githelpme
