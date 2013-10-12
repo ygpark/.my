@@ -5,6 +5,19 @@
 [core]
 	editor = vim
 
+[diff]
+	tool=kdiff3
+
+[difftool]
+	prompt=false
+
+[merge]
+	tool = kdiff3
+
+[mergetool]
+	prompt=false
+
+
 [color]
 	status=auto
 	branch=auto
@@ -12,7 +25,7 @@
 	diff=auto
 
 [alias]
-	helpme="!cat ~/.githelpme"
+	helpme="!cat ~/.githelpme | less"
 
 	br = branch -vv
 	bm = blame --date=relative 
@@ -45,7 +58,7 @@
 	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
 
 	# 바뀐 파일 목록 출력
-	changes=diff --name-status -r
+	changes=diff --name-status
 
 	# 바뀐 파일들의 양 출력
 	diffstat=diff --stat -r
