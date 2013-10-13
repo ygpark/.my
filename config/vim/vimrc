@@ -52,7 +52,6 @@ au BufRead,BufNewFile *.S		set ft=c
 "====================================================
 "= 기본 설정
 "====================================================
-set cindent			"들여쓰기 설정
 set ruler			" 화면 우측 하단에 현재 커서의 위치(줄,칸)를 보여준다.
 set number			" 줄번호 출력
 set modifiable
@@ -70,10 +69,10 @@ colorscheme desert
 "==========================
 "= autocmd
 "==========================
-autocmd BufEnter *.c        setlocal ts=8 sw=8 sts=8 noexpandtab
-autocmd BufEnter *.S        setlocal ts=8 sw=8 sts=8 noexpandtab
-autocmd BufEnter *.py       setlocal ts=8 sw=8 sts=8 noexpandtab
-autocmd BufEnter Makefile   setlocal ts=8 sw=8 sts=8 noexpandtab
+autocmd BufEnter *.c        setlocal ts=8 sw=8 sts=8 noexpandtab cindent
+autocmd BufEnter *.S        setlocal ts=8 sw=8 sts=8 noexpandtab cindent
+autocmd BufEnter *.py       setlocal ts=8 sw=8 sts=8 noexpandtab cindent
+autocmd BufEnter Makefile   setlocal ts=8 sw=8 sts=8 noexpandtab cindent
 autocmd BufEnter .*         setlocal ts=8 sw=8 sts=8 noexpandtab nocindent
 autocmd BufEnter *.md       setlocal ts=8 sw=8 sts=8 noexpandtab nocindent
 autocmd BufEnter *.sh       setlocal ts=8 sw=8 sts=8 noexpandtab nocindent
