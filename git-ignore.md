@@ -6,6 +6,8 @@
 .*
 !.gitignore
 *.o
+*.a
+*.so
 *.depends
 ````
 
