@@ -1,12 +1,33 @@
-#!/bin/sh
-
-if [ -e ~/.vimrc -o -e ~/.vim ]; then
-	echo "경고: 설치를 진행하려면 ~/.vim/ 디렉토리와 ~/.vimrc 파일을 삭제해야 합니다."
+#!/bin/bash
+PROGNAME=install.sh
+TARGET=$HOME/.vimrc
+echo
+echo -n "$TARGET을 삭제하시겠습니까? (Y/n)"
+read ANSWER
+if [[ $ANSWER == "" ]] || [[ $ANSWER == "Y" ]] || [[ $ANSWER == "y" ]]
+then
+	rm -vf $TARGET
+else
+	echo "$PROGNAME: 중단됨"
 	exit
 fi
 
+
+TARGET=$HOME/.vim
+echo
+echo -n "$TARGET을 삭제하시겠습니까? (Y/n)"
+read ANSWER
+if [[ $ANSWER == "" ]] || [[ $ANSWER == "Y" ]] || [[ $ANSWER == "y" ]]
+then
+	rm -vrf $TARGET
+else
+	echo "$PROGNAME: 중단됨"
+	exit
+fi
+
+
 echo "심볼릭 릭크 생성..."
-ln -sfv $PWD/vimrc ~/.vimrc
+ln -fv $PWD/_vimrc ~/.vimrc
 
 echo "vundle 다운로드중..."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
