@@ -8,6 +8,7 @@ alias vi-githelpme="vi /home/ygpark/.my/config/git/_githelpme"
 
 alias my="cd $HOME/.my/"
 alias myconfig="cd $HOME/.my/config"
+alias myvim="cd $HOME/.my/config/vim"
 alias myman="cd $HOME/.my/man"
 alias myhello="cd $HOME/.my/hello"
 
