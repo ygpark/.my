@@ -107,3 +107,8 @@ else \
   echo " '$Yellow$PathShort$Color_Off'\$ "; \
 fi)'
 }
+
+function init-gitignore
+{
+    cp $HOME/.my/config/git/_gitignore ./.gitignore
+}
