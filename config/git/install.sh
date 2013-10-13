@@ -3,10 +3,10 @@
 THIS_IS="$(grep 'source ~/\.gitrc' $HOME/.bashrc | wc -l)"
 FIRST_TIME="0"
 
-ln -svf $PWD/_gitconfig ~/.gitconfig
-ln -svf $PWD/_githelpme ~/.githelpme
-ln -svf $PWD/_githandbook ~/.githandbook
-ln -svf $PWD/_gitrc ~/.gitrc
+ln -vf $PWD/_gitconfig ~/.gitconfig
+ln -vf $PWD/_gitman ~/.gitman
+ln -vf $PWD/_githelpme ~/.githelpme
+ln -vf $PWD/_gitrc ~/.gitrc
 
 # .bashrc에 추가하기
 if [[ $THIS_IS == $FIRST_TIME ]]
