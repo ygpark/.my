@@ -14,8 +14,7 @@
 "   - The-NERD-Commenter
 "     - 주석: <Leader>cs
 "     - 해제: <Leader>cu
-"   - snipMate
-"     - SuperTab이랑 충돌나서 일단 주석처리
+"   - snipMate, SuperTab 충돌나서 superTab 주석처리
 
 " Bundle 설정
 set nocompatible               " be iMproved
@@ -39,10 +38,9 @@ Bundle 'OmniCppComplete'
 Bundle 'The-NERD-tree'
 Bundle 'https://github.com/scrooloose/nerdcommenter'
 Bundle 'AutoComplPop'
-Bundle 'SuperTab'
-Bundle 'SuperTab-continued.'
 Bundle 'a.vim'
-"Bundle 'snipMate'
+Bundle 'snipMate'
+
 
 filetype plugin indent on     " required!
 
