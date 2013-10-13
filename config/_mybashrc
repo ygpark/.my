@@ -7,6 +7,9 @@ alias vi-gitman="vi /home/ygpark/.my/config/git/_gitman"
 alias vi-githelpme="vi /home/ygpark/.my/config/git/_githelpme"
 
 alias my="cd $HOME/.my/"
+alias myconfig="cd $HOME/.my/config"
+alias myman="cd $HOME/.my/man"
+alias myhello="cd $HOME/.my/hello"
 
 alias init-cmake="cp /home/ygpark/.my/hello/make/cmake/99-template/CMakeLists.txt ."
 alias init-scons="cp /home/ygpark/.my/hello/make/scons/99-template/SConstruct ."
