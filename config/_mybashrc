@@ -16,3 +16,5 @@ alias init-cmake="cp /home/ygpark/.my/hello/make/cmake/99-template/CMakeLists.tx
 alias init-scons="cp /home/ygpark/.my/hello/make/scons/99-template/SConstruct ."
 alias init-qmake="cp /home/ygpark/.my/hello/make/qmake/99-template/project.pro ."
 
+alias init-hello-cpp="cp /home/ygpark/.my/hello/cpp/00-helloworld/* ."
+
