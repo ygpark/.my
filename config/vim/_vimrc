@@ -12,17 +12,18 @@
 "   - Bundle 명령 뒤에 주석 설정은 허용되지 않는다
 " -플러그인 설명
 "   - The-NERD-Commenter
-"     - 주석1: \cc, \cn, \cs  
-"     - 주석2: \ca 
-"     - 해제: \c<space>
+"     - 주석: <Leader>cs
+"     - 해제: <Leader>cu
+"   - snipMate
+"     - SuperTab이랑 충돌나서 일단 주석처리
 
+" Bundle 설정
 set nocompatible               " be iMproved
 filetype off                   " required!
-
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-" Bundle 관리자
+" Bundle 플러그인
 Bundle 'gmarik/vundle'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -41,7 +42,6 @@ Bundle 'AutoComplPop'
 Bundle 'SuperTab'
 Bundle 'SuperTab-continued.'
 Bundle 'a.vim'
-"Bundle 'snipMate':
 "Bundle 'snipMate'
 
 filetype plugin indent on     " required!
