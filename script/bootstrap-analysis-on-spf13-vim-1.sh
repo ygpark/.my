@@ -49,15 +49,13 @@ lnif() {
 }
 
 do_backup() {
-    if [ -e "$2" ] || [ -e "$3" ] || [ -e "$4" ]; then
-        today=`date +%Y%m%d_%s`
-        for i in "$2" "$3" "$4"; do
-            [ -e "$i" ] && [ ! -L "$i" ] && mv "$i" "$i.$today";
-        done
-        ret="$?"
-        success "$1"
-        debug
-   fi
+    today=`date +%Y%m%d_%s`
+    for i in "$@"; do
+        [ -e "$i" ] && [ ! -L "$i" ] && mv "$i" "$i.$today";
+    done
+    ret="$?"
+    success "$1"
+    debug
 }
 
 upgrade_repo() {
