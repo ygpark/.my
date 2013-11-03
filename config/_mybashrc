@@ -19,3 +19,7 @@ alias init-qmake="cp $HOME/.my/hello/make/qmake/99-template/project.pro ."
 
 alias init-hello-cpp="cp /home/ygpark/.my/hello/cpp/00-helloworld/* ."
 
+function grep-source-fileonly
+{
+    find . -regex ".*\.[ch]\(pp\)?" | xargs grep $1 | sed -n "s/:.*$//p" | sort -u
+}
