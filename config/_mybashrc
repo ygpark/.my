@@ -31,3 +31,8 @@ function maki()
         return;
     fi
 }
+
+function grep-source-fileonly
+{
+    find . -regex ".*\.[ch]\(pp\)?" | xargs grep $1 | sed -n "s/:.*$//p" | sort -u
+}
