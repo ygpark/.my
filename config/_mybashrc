@@ -23,13 +23,22 @@ alias n='nautilus .'
 
 function maki()
 {
+    cat `readlink -f ~/repo/man/$1`
+}
+
+function maki-web()
+{
+    google-chrome "https://github.com/ygpark/man/blob/master/$1"
+}
+
+function maki-search()
+{
     if [[ "$1" == "" ]]; then 
-        find ~/repo/man -name "*$2*.md" | sed -e "s/.*\///g" | sort
-        return;
-    else
-        cat ~/repo/man/$1
-        return;
+        echo "사용법: maki-search <검색어>"
+        return
     fi
+
+    find ~/repo/man -name "*$1*.md" | sed -e "s/.*\///g" | sort
 }
 
 function grep-source-fileonly
