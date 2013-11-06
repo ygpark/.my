@@ -7,17 +7,39 @@ alias vi-gitman="vi /home/ygpark/.my/config/git/_gitman"
 alias vi-githelpme="vi /home/ygpark/.my/config/git/_githelpme"
 
 alias my="cd $HOME/.my/"
-alias myconfig="cd $HOME/.my/config"
-alias myscript="cd $HOME/.my/script"
-alias myvim="cd $HOME/.my/config/vim"
-alias myman="cd $HOME/.my/man"
-alias myhello="cd $HOME/.my/hello"
+alias go-config="cd $HOME/.my/config"
+alias go-script="cd $HOME/.my/script"
+alias go-vim="cd $HOME/.my/config/vim"
+alias go-man="cd $HOME/repo/man"
+alias go-hello="cd $HOME/repo/hello"
 
 alias init-cmake="cp $HOME/.my/hello/make/cmake/99-template/CMakeLists.txt ."
 alias init-scons="cp $HOME/.my/hello/make/scons/99-template/SConstruct ."
 alias init-qmake="cp $HOME/.my/hello/make/qmake/99-template/project.pro ."
 
 alias init-hello-cpp="cp /home/ygpark/.my/hello/cpp/00-helloworld/* ."
+
+alias n='nautilus .'
+
+function maki()
+{
+    cat `readlink -f ~/repo/man/$1`
+}
+
+function maki-web()
+{
+    google-chrome "https://github.com/ygpark/man/blob/master/$1"
+}
+
+function maki-search()
+{
+    if [[ "$1" == "" ]]; then 
+        echo "사용법: maki-search <검색어>"
+        return
+    fi
+
+    find ~/repo/man -name "*$1*.md" | sed -e "s/.*\///g" | sort
+}
 
 function grep-source-fileonly
 {
