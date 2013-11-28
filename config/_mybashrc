@@ -26,10 +26,16 @@ function grep-source-fileonly
     find . -regex ".*\.[ch]\(pp\)?" | xargs grep $1 | sed -n "s/:.*$//p" | sort -u
 }
 
+function grep-source
+{
+    find . -regex ".*\.[ch]\(pp\)?" | xargs grep $1 | sort -u | grep $1 --color=auto
+}
+
 function bashrc-reload
 {
     source ~/.bashrc
 }
+
 function reload-bashrc
 {
     source ~/.bashrc
