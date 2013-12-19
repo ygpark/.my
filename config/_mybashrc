@@ -44,17 +44,19 @@ function reload-bashrc
 #
 # Alias
 #
-alias vi-bashrc="vi /home/$USER/.my/config/_mybashrc"
-alias vi-vimrc="vi /home/$USER/.my/config/vim/_vimrc"
-alias vi-gitconfig="vi /home/$USER/.my/config/git/_gitconfig"
-alias vi-gitman="vi /home/$USER/.my/config/git/_gitman"
-alias vi-githelpme="vi /home/$USER/.my/config/git/_githelpme"
 
-alias bashrc-vi="vi /home/$USER/.my/config/_mybashrc"
-alias vimrc-vi="vi /home/$USER/.my/config/vim/_vimrc"
-alias gitconfig-vi="vi /home/$USER/.my/config/git/_gitconfig"
-alias gitman-vi="vi /home/$USER/.my/config/git/_gitman"
-alias githelpme-vi="vi /home/$USER/.my/config/git/_githelpme"
+alias now="cd $HOME/now"
+alias vi-bashrc="vi $HOME/.my/config/_mybashrc"
+alias vi-vimrc="vi $HOME/.my/config/vim/_vimrc"
+alias vi-gitconfig="vi $HOME/.my/config/git/_gitconfig"
+alias vi-gitman="vi $HOME/.my/config/git/_gitman"
+alias vi-githelpme="vi $HOME/.my/config/git/_githelpme"
+
+alias bashrc-vi="vi $HOME/.my/config/_mybashrc"
+alias vimrc-vi="vi $HOME/.my/config/vim/_vimrc"
+alias gitconfig-vi="vi $HOME/.my/config/git/_gitconfig"
+alias gitman-vi="vi $HOME/.my/config/git/_gitman"
+alias githelpme-vi="vi $HOME/.my/config/git/_githelpme"
 
 alias my="cd $HOME/.my/"
 alias go-config="cd $HOME/.my/config"
@@ -67,10 +69,19 @@ alias init-cmake="cp $HOME/.my/hello/make/cmake/99-template/CMakeLists.txt ."
 alias init-scons="cp $HOME/.my/hello/make/scons/99-template/SConstruct ."
 alias init-qmake="cp $HOME/repo/hello/make/qmake/template-cpp/* ."
 
-alias init-hello-cpp="cp /home/$USER/.my/hello/cpp/00-helloworld/* ."
+alias init-hello-cpp="cp $HOME/.my/hello/cpp/00-helloworld/* ."
 
 alias n='nautilus .'
+alias m='linm'
+alias h='cd ~/repo/hello'
+alias c="cd $HOME/repo/ehr-dev/templateEditor/templateCreator"
+alias d="cd $HOME/repo/ehr-dev/templateEditor/templateDesigner"
 
+alias search='find . -regex ".*\(c\|cpp\|h\|java\)" | xargs grep --color=auto -H '
+alias search-make='find . -regex ".*\(M\|m\)akefile\(\..*\)*" -o -regex ".*\.mk" | xargs grep --color=auto -H '
+
+
+alias httpd='python /usr/local/nacl_sdk/pepper_31/tools/httpd.py'
 
 # for Google Native Client
 export NACL_SDK_ROOT=/usr/local/nacl_sdk/pepper_31
