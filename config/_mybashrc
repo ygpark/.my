@@ -77,7 +77,18 @@ alias h='cd ~/repo/hello'
 alias c="cd $HOME/repo/ehr-dev/templateEditor/templateCreator"
 alias d="cd $HOME/repo/ehr-dev/templateEditor/templateDesigner"
 
-alias search='find . -regex ".*\(c\|cpp\|h\|java\)" | xargs grep --color=auto -H '
+function search()
+{
+    find . -regex ".*\(c\|cpp\|h\|java\)" | xargs grep --color=auto -H $1
+}
+
+function search-filter-filename()
+{
+    TMP=/tmp/search-filter-filename
+    rm -f $TMP
+    find . -regex ".*\(c\|cpp\|h\|java\)" | xargs grep --color=auto -H $1 >> $TMP
+    sed -e "s/:.*$//g" $TMP | sort -u
+}
 alias search-make='find . -regex ".*\(M\|m\)akefile\(\..*\)*" -o -regex ".*\.mk" | xargs grep --color=auto -H '
 
 
